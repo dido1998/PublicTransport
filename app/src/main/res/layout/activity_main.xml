@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context="com.aniket.mahe.publictransport.MainActivity">
+
+
+    <EditText
+        android:id="@+id/FromPlace"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="31dp"
+        android:background="@color/cardview_light_background"
+        android:ems="10"
+        android:hint="From..."
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/ToPlace"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/FromPlace"
+        android:layout_marginTop="15dp"
+        android:background="@color/cardview_light_background"
+        android:ems="10"
+        android:hint="To..."
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/Transport"
+        android:layout_width="133dp"
+        android:layout_height="wrap_content"
+        android:onClick="getTransport"
+        android:text="Transport"
+        android:layout_below="@+id/ToPlace"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/Navigate"
+        android:layout_width="133dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/stations"
+        android:layout_toStartOf="@+id/Transport"
+        android:onClick="startNavigation"
+        android:text="Navigate"
+        android:visibility="invisible" />
+
+
+    <Button
+        android:id="@+id/stations"
+        android:layout_width="133dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="false"
+        android:gravity="center"
+        android:onClick="getStations"
+        android:text="Stations"
+        android:visibility="invisible"
+        android:layout_below="@+id/Transport"
+        android:layout_toEndOf="@+id/Transport" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/steps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/adView"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/Navigate" />
+
+
+
+
+</RelativeLayout>
